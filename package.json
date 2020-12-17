@@ -9,8 +9,11 @@
   "private": false,
   "scripts": {
     "reinstall": "rm -rf node_modules/ && yarn install && yarn link 'react-folder-tree'",
-    "build": "webpack --config webpack.config.js",
+    "prebuild": "rm -rf dist/",
+    "build": "webpack --config config/webpack.prod.config.js",
     "start": "NODE_ENV=development node scripts/dev-server.js",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint src/ --ext .js,.jsx",
     "test": "jest --collect-coverage"
   },
@@ -42,6 +45,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "gh-pages": "^3.1.0",
     "html-loader": "^1.3.2",
     "html-webpack-plugin": "^4.5.0",
     "husky": "^4.3.0",
