@@ -1,0 +1,29 @@
+#folder-tree-demos {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  * { box-sizing: border-box };
+
+  h1 {
+    text-align: center;
+  }
+
+  #demo-code {
+    // border: 2px solid blue;
+    width: 40%;
+    display: inline-block;
+    margin: 0 !important;
+    font-size: 90% !important;
+    border-radius: 10px !important;
+    padding: 0 20px !important;
+  }
+
+  #demo-sandbox {
+    // border: 2px solid red;
+    position: absolute;
+    display: inline-block;
+    font-size: 110%;
+    left: 42%;
+    width: 58%;
+  }
+}
