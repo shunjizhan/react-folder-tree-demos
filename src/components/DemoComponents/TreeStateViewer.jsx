@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
 import FolderTree from 'react-folder-tree';
+
 import { testData } from '../../utils/testData';
+import {
+  DemoCode,
+  DemoDescription,
+} from './DemoUtils';
+
+const demoDescription = 'This demos a visualization of the tree state. When tree state changes internally (due to any user interaction), folder tree will trigger onChange with the updated tree state as an argument.';
 
 const codeString = `
 const TreeStateViewer = () => {
+  // this tree state will be in sync with the internal tree state
+  // don't pass this state to FolderTree, since FolderTree manages state internally
+  // this state is only for external usage.
   const [treeState, setTreeState] = useState(testData);
-  const onTreeStateChange = data => {
+  const onTreeStateChange = newState => {
     // probably do something else here
-    setTreeState(data);
+    setTreeState(newState);
   };
 
   return (
@@ -55,22 +62,22 @@ const SectionTitle = ({ children }) => (
 
 const TreeStateViewer = () => {
   const [treeState, setTreeState] = useState(testData);
-  const onTreeStateChange = data => {
+  const onTreeStateChange = newState => {
     // probably do something else here
-    setTreeState(data);
+    setTreeState(newState);
   };
 
   return (
     <>
-      <SyntaxHighlighter
-        id='demo-code'
-        language='javascript'
-        style={ tomorrow }
-      >
-        { codeString }
-      </SyntaxHighlighter>
+      <DemoDescription>
+        { demoDescription }
+      </DemoDescription>
 
-      <div id='demo-sandbox'>
+      <DemoCode>
+        { codeString }
+      </DemoCode>
+
+      <div className='demo-sandbox'>
         <div
           style={{
             width: '49%',

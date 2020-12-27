@@ -8,9 +8,9 @@
     text-align: center;
   }
 
-  #demo-code {
+  .demo-code {
     // border: 2px solid blue;
-    width: 40%;
+    width: 45%;
     display: inline-block;
     margin: 0 !important;
     font-size: 90% !important;
@@ -18,12 +18,26 @@
     padding: 0 20px !important;
   }
 
-  #demo-sandbox {
+  .demo-sandbox {
     // border: 2px solid red;
     position: absolute;
     display: inline-block;
-    font-size: 110%;
-    left: 42%;
-    width: 58%;
+    font-size: 130%;
+    left: 48%;
+    width: 50%;
+  }
+
+  .demo-description {
+    text-align: center;
+    margin-bottom: 20px;
+
+    .description-text {
+      width: 50%;
+      font-size: 120%;
+      display: inline-block;
+      border-radius: 10px;
+      border: 2px solid #aaaaaa;
+      padding: 10px 20px;
+    }
   }
 }
