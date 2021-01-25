@@ -107,7 +107,11 @@ const TreeStateViewer = () => {
             Tree State Viewer
           </SectionTitle>
 
-          <pre style={{ margin: 0 }}>
+          <pre style={{
+            margin: 0,
+            fontFamily: 'consolas',
+          }}
+          >
             { JSON.stringify(treeState, null, 2) }
           </pre>
         </div>
