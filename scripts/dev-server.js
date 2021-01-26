@@ -2,7 +2,7 @@ const webpackDevServer = require('webpack-dev-server');
 const webpack = require('webpack');
 const path = require('path');
 
-const config = require(path.resolve(__dirname, '../config/webpack.config.js'));
+const config = require(path.resolve(__dirname, '../webpack.config.js'));
 
 const options = {
   hot: true,          // hot module replacement
