@@ -5,6 +5,7 @@ import WebFont from 'webfontloader';
 import BasicTree from './DemoComponents/BasicTree';
 import TreeStateViewer from './DemoComponents/TreeStateViewer';
 import CustomIconsDemo from './DemoComponents/CustomIconsDemo';
+import logo from '../assets/logo.png';
 
 import './FolderTreeDemos.scss';
 
@@ -60,7 +61,7 @@ const FolderTreeDemos = () => {
   return (
     <div id='folder-tree-demos'>
       <div id='top-bar'>
-        <span id='app-title'>React Folder Tree Demos </span>
+        <img id='logo' src={ logo } alt='logo' /><span id='app-title'>React Folder Tree Demos </span>
         { DemoSelect }
       </div>
       <DemoComponent />

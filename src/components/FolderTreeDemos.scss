@@ -13,9 +13,14 @@ $orange: rgb(255, 133, 51);
     font-size: 200%;
     margin-bottom: 5px;
 
+    img#logo {
+      width: auto;
+      height: 30px;
+    }
+
     #app-title {
       font-weight: bold;
-      margin-right: 20px;
+      margin: 0 20px;
     }
   
     #DemoSelect {
