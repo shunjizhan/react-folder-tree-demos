@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 import WebFont from 'webfontloader';
 
+import BasicTree from './DemoComponents/BasicTree';
 import TreeStateViewer from './DemoComponents/TreeStateViewer';
 import CustomIconsDemo from './DemoComponents/CustomIconsDemo';
 
@@ -25,12 +26,13 @@ WebFont.load({
 });
 
 const allComponents = {
+  'Basic Tree': BasicTree,
   'View Tree State': TreeStateViewer,
   'Use Custom Icons': CustomIconsDemo,
 };
 
 const FolderTreeDemos = () => {
-  const [componentName, setComponentName] = useState('View Tree State');
+  const [componentName, setComponentName] = useState('Basic Tree');
   const DemoComponent = allComponents[componentName];
 
   const DemoSelect = (

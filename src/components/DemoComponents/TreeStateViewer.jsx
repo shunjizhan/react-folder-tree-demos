@@ -9,7 +9,7 @@ import {
 
 const demoDescription = (
   <span>
-    This example demos a <Highlight>live visualization of the tree state</Highlight>. Each time a user interacts with the tree, tree state will changes internally, and folder tree will trigger <Highlight>onChange(updated_tree_state)</Highlight>. This is how folder tree can communicate with the outside world, such as saving the latest tree state to somewhere else, or telling other components that a new tree state comes.
+    This example demos a <Highlight>live visualization of the tree state</Highlight>. Each time a user interacts with the tree, tree state will changes internally, and folder tree will trigger <Highlight>onChange(updated_tree_state)</Highlight>. This is how folder tree can <Highlight>communicate with the outside world</Highlight>, such as saving the latest tree state to somewhere else, or telling other components that a new tree state comes.
   </span>
 );
 
