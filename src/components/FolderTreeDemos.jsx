@@ -7,6 +7,9 @@ import CustomIconsDemo from './DemoComponents/CustomIconsDemo';
 
 import './FolderTreeDemos.scss';
 
+// TODO: choose the best font, and remove others
+// TODO: add github link on the right corner to link the github folder
+// TODO: add footer made with love by shunjizhan, and link to my github
 WebFont.load({
   google: {
     families: [

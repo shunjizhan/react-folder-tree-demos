@@ -20,7 +20,14 @@ const DemoDescription = ({ children }) => (
   </div>
 );
 
+const Highlight = ({ children }) => (
+  <span className='Highlight'>
+    { children }
+  </span>
+);
+
 export {
   DemoCode,
   DemoDescription,
+  Highlight,
 };

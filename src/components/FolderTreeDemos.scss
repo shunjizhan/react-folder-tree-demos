@@ -1,3 +1,5 @@
+$orange: rgb(255, 133, 51);
+
 #folder-tree-demos {
   font-family: 'Lato', sans-serif;
   width: 100%;
@@ -20,23 +22,22 @@
       @import "~bootstrap/scss/bootstrap";
       display: inline-block;
 
-      $orange: rgb(255, 133, 51);
-
       .dropdown-items {
-        padding: 3px 20px;
+        padding: 5px 30px;
         font-size: 150%;
 
         &:hover {
-          background-color: rgba($orange, 0.5);
+          background-color: rgba($orange, 0.4);
         }
       }
       
       #dropdown-basic-button {
         padding: 3px 20px;
         font-size: 90%;
-        border: 2px solid rgba($orange, 0.5);
-        background-color: rgba($orange, 1);
+        border: 2px solid rgba($orange, 0.2);
+        background-color: rgba($orange, 0.8);
         color: black;
+        border-radius: 8px;
       }
     }
   }
@@ -63,6 +64,7 @@
   .demo-description {
     text-align: center;
     margin-bottom: 20px;
+    line-height: 1.6em;
 
     .description-text {
       width: 50%;
@@ -71,6 +73,14 @@
       border-radius: 10px;
       border: 2px solid #aaaaaa;
       padding: 10px 20px;
+    }
+
+    .Highlight {
+      color: rgba($orange, 0.9);
+      // padding: 0px 10px;
+      // background-color: rgba($orange, 0.2);
+      // border-bottom: 2px solid $orange;
+      // font-weight: bolder;
     }
   }
 }

@@ -12,16 +12,21 @@ import {
   FaRegCheckSquare,
 } from 'react-icons/fa';
 
-import FolderTree from 'react-folder-tree';
-import { testData } from '../../utils/testData';
+import FolderTree, { testData } from 'react-folder-tree';
 import {
   DemoCode,
   DemoDescription,
+  Highlight,
 } from './DemoUtils';
 
-const demoDescription = 'This demo uses custom Icons from react-icons library, and implements additional onClick behaviors: when click, console log the name of the icon clicked.';
+const demoDescription = (
+  <span>
+    This example demos how to use <Highlight>custom icons</Highlight>. It uses icon from ***, and implements <Highlight>custom onClick behaviors</Highlight> for these icons: when click, console log the name of the icon clicked.'
+  </span>
+);
 
 const codeString = `
+import FolderTree, { testData } from 'react-folder-tree';
 import {
   FaCaretRight,
   FaCaretDown,
@@ -117,11 +122,7 @@ const OKIcon = ({ onClick, className }) => {
 };
 
 const CustomIconsDemo = () => {
-  const [treeState, setTreeState] = useState(testData);
-  const onTreeStateChange = data => {
-    // probably do something else here
-    setTreeState(data);
-  };
+  const onTreeStateChange = data => { /* do whatever needed */ };
 
   const iconComponents = {
     FileIcon,
@@ -227,11 +228,7 @@ const OKIcon = ({ onClick, className }) => {
 };
 
 const CustomIconsDemo = () => {
-  const [treeState, setTreeState] = useState(testData);
-  const onTreeStateChange = data => {
-    // probably do something else here
-    setTreeState(data);
-  };
+  const onTreeStateChange = data => { /* do whatever needed */ };
 
   const iconComponents = {
     FileIcon,

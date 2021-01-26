@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
-import FolderTree from 'react-folder-tree';
+import FolderTree, { testData } from 'react-folder-tree';
 
-import { testData } from '../../utils/testData';
 import {
   DemoCode,
   DemoDescription,
+  Highlight,
 } from './DemoUtils';
 
-const demoDescription = 'This demos a visualization of the tree state. When tree state changes internally (due to any user interaction), folder tree will trigger onChange with the updated tree state as an argument.';
+const demoDescription = (
+  <span>
+    This example demos a <Highlight>live visualization of the tree state</Highlight>. Each time a user interacts with the tree, tree state will changes internally, and folder tree will trigger <Highlight>onChange(updated_tree_state)</Highlight>. This is how folder tree can communicate with the outside world, such as saving the latest tree state to somewhere else, or telling other components that a new tree state comes.
+  </span>
+);
 
 const codeString = `
+import FolderTree, { testData } from 'react-folder-tree';
+
 const TreeStateViewer = () => {
   // this tree state will be in sync with the internal tree state
   // don't pass this state to FolderTree, since FolderTree manages state internally
@@ -24,7 +30,7 @@ const TreeStateViewer = () => {
     <div id='demo-sandbox'>
       <div>
         <SectionTitle>
-          Real Tree
+          The Tree
         </SectionTitle>
 
         <FolderTree
@@ -35,10 +41,10 @@ const TreeStateViewer = () => {
 
       <div>
         <SectionTitle>
-          Tree State Viewer
+          Live Tree State
         </SectionTitle>
 
-        <pre style={{ margin: 0 }}>
+        <pre>
           { JSON.stringify(treeState, null, 2) }
         </pre>
       </div>
@@ -85,7 +91,7 @@ const TreeStateViewer = () => {
           }}
         >
           <SectionTitle>
-            Real Tree
+            The Tree
           </SectionTitle>
 
           <FolderTree
@@ -104,7 +110,7 @@ const TreeStateViewer = () => {
           }}
         >
           <SectionTitle>
-            Tree State Viewer
+            Live Tree State
           </SectionTitle>
 
           <pre style={{
