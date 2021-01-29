@@ -13,7 +13,7 @@
     "build": "MODE=production webpack --config webpack.config.js --progress --color",
     "start": "MODE=development node scripts/dev-server.js",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist --branch dist",
     "lint": "eslint src/ --ext .js,.jsx",
     "test": "jest --collect-coverage"
   },
