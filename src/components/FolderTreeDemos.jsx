@@ -3,24 +3,19 @@ import { DropdownButton, Dropdown } from 'react-bootstrap';
 import WebFont from 'webfontloader';
 
 import BasicTree from './DemoComponents/BasicTree';
+import InitialState from './DemoComponents/InitialState';
 import TreeStateViewer from './DemoComponents/TreeStateViewer';
 import CustomIconsDemo from './DemoComponents/CustomIconsDemo';
 import logo from '../assets/logo.png';
 
 import './FolderTreeDemos.scss';
 
-// TODO: choose the best font, and remove others
 // TODO: add github link on the right corner to link the github folder
 // TODO: add footer made with love by shunjizhan, and link to my github
+// TODO: webpack tree shaking to reduce trunk size (and other optimizations)
 WebFont.load({
   google: {
     families: [
-      'Handlee',              // home
-      'Cabin Sketch:700',     // section title
-      'Neucha',               // home
-      'Lato',                 // general
-      'Noto Serif KR',        // myself
-      'Architects Daughter',  // data chart title
       'M PLUS Rounded 1c',    // book and life
     ],
   },
@@ -28,7 +23,8 @@ WebFont.load({
 
 const allComponents = {
   'Basic Tree': BasicTree,
-  'View Tree State': TreeStateViewer,
+  'Initial State': InitialState,
+  'View Live State': TreeStateViewer,
   'Use Custom Icons': CustomIconsDemo,
 };
 
