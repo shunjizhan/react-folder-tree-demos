@@ -3,13 +3,12 @@ import React, { useState } from 'react';
 import {
   FaCaretRight,
   FaCaretDown,
-  FaRegFolder,
-  FaRegFolderOpen,
-  FaRegFile,
   FaRegWindowClose,
   FaRegTrashAlt,
   FaRegEdit,
   FaRegCheckSquare,
+  FaBitcoin,
+  FaEthereum,
 } from 'react-icons/fa';
 
 import FolderTree, { testData } from 'react-folder-tree';
@@ -21,25 +20,24 @@ import {
 
 const demoDescription = (
   <span>
-    This example demos how to use <Highlight>custom icons</Highlight>. It uses icon from ***, and implements <Highlight>custom onClick behaviors</Highlight> for these icons: when click, console log the name of the icon clicked.'
+    This example demos how to use <Highlight>custom icons</Highlight>, and all icons can be customized! This example uses icons from Fontawesome, and implements <Highlight>custom onClick behaviors</Highlight>: when click, console log the name of the icon clicked.'
   </span>
 );
 
 const codeString = `
-import FolderTree, { testData } from 'react-folder-tree';
 import {
   FaCaretRight,
   FaCaretDown,
-  FaRegFolder,
-  FaRegFolderOpen,
-  FaRegFile,
   FaRegWindowClose,
   FaRegTrashAlt,
   FaRegEdit,
   FaRegCheckSquare,
+  FaBitcoin,
+  FaEthereum,
 } from 'react-icons/fa';
 
-/* ---------- custom icons ---------- */
+import FolderTree, { testData } from 'react-folder-tree';
+
 const CaretRightIcon = ({ onClick, className }) => {
   const handleClick = () => {
     console.log('clicked: CaretRightIcon');
@@ -64,7 +62,7 @@ const FileIcon = ({ onClick, className }) => {
     onClick();
   };
 
-  return <FaRegFile onClick={ handleClick } />;
+  return <FaEthereum onClick={ handleClick } />;
 };
 
 const FolderIcon = ({ onClick, className }) => {
@@ -73,7 +71,7 @@ const FolderIcon = ({ onClick, className }) => {
     onClick();
   };
 
-  return <FaRegFolder onClick={ handleClick } />;
+  return <FaBitcoin onClick={ handleClick } />;
 };
 
 const FolderOpenIcon = ({ onClick, className }) => {
@@ -82,7 +80,7 @@ const FolderOpenIcon = ({ onClick, className }) => {
     onClick();
   };
 
-  return <FaRegFolderOpen onClick={ handleClick } />;
+  return <FaBitcoin onClick={ handleClick } />;
 };
 
 const EditIcon = ({ onClick, className }) => {
@@ -137,11 +135,13 @@ const CustomIconsDemo = () => {
   };
 
   return (
-    <FolderTree
-      data={ testData }
-      onChange={ onTreeStateChange }
-      iconComponents={ iconComponents }
-    />
+    <div className='demo-sandbox'>
+      <FolderTree
+        data={ testData }
+        onChange={ onTreeStateChange }
+        iconComponents={ iconComponents }
+      />
+    </div>
   );
 };
 `;
@@ -170,7 +170,7 @@ const FileIcon = ({ onClick, className }) => {
     onClick();
   };
 
-  return <FaRegFile onClick={ handleClick } />;
+  return <FaEthereum onClick={ handleClick } />;
 };
 
 const FolderIcon = ({ onClick, className }) => {
@@ -179,7 +179,7 @@ const FolderIcon = ({ onClick, className }) => {
     onClick();
   };
 
-  return <FaRegFolder onClick={ handleClick } />;
+  return <FaBitcoin onClick={ handleClick } />;
 };
 
 const FolderOpenIcon = ({ onClick, className }) => {
@@ -188,7 +188,7 @@ const FolderOpenIcon = ({ onClick, className }) => {
     onClick();
   };
 
-  return <FaRegFolderOpen onClick={ handleClick } />;
+  return <FaBitcoin onClick={ handleClick } />;
 };
 
 const EditIcon = ({ onClick, className }) => {
