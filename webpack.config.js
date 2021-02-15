@@ -1,17 +1,29 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CleanTerminalPlugin = require('clean-terminal-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 const devOptions = {
   mode: 'development',
+  devtool: 'inline-source-map',
   watchOptions: {
-    aggregateTimeout: 0, // debounce time for re-compile
+    aggregateTimeout: 0,          // debounce time for re-compile
     ignored: ['node_modules/**'],
   },
 };
 
 const prodOptions = {
   mode: 'production',
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserWebpackPlugin(),              // 压缩js
+      new OptimizeCssAssetsWebpackPlugin(),   // 压缩css #TODO: 好像其实没有压缩？？main.css还是很大
+    ],
+  },
 };
 
 const isProd = process.env.MODE === 'production' || false;
@@ -54,7 +66,8 @@ module.exports = {
       {
         test: /\.s?css$/,
         use: [
-          'style-loader',   // creates style nodes from JS strings
+          MiniCssExtractPlugin.loader,    // extract css to a separate file, reduce main chunk size
+          // 'style-loader',   // creates style nodes from JS strings
           'css-loader',     // translates CSS into CommonJS
           'sass-loader',    // compiles Sass to CSS, using Node Sass by default
         ],
@@ -64,7 +77,7 @@ module.exports = {
         use: {
           loader: 'url-loader',
           options: {
-            limit: '10000',
+            limit: 10 * 1024,       // only use url loader for file less than 10KB, otherwise use file-loader
             name: 'static/[name].[hash:8].[ext]',
           },
         },
@@ -78,9 +91,9 @@ module.exports = {
       favicon: path.resolve(__dirname, './public/pokeball.ico'),
       filename: 'index.html',
     }),
-    // clear terminal in each build
-    new CleanTerminalPlugin(),
+    new CleanTerminalPlugin(),     // clear terminal in each build
+    new MiniCssExtractPlugin(),    // extract css to a separate file, reduce main chunk size
+    new BundleAnalyzerPlugin(),
   ],
-  devtool: 'inline-source-map',
   ...options,
 };
