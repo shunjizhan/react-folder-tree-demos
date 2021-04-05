@@ -20,7 +20,7 @@ import {
 
 const demoDescription = (
   <span>
-    This example demos how to use <Highlight>custom icons</Highlight>, and all icons can be customized! This example uses icons from Fontawesome, and implements <Highlight>custom onClick behaviors</Highlight>: when click, console log the name of the icon clicked.'
+    This example demos how to use <Highlight>custom icons</Highlight> (all icons can be customized)! In the example it uses icons from Fontawesome, and implements <Highlight>custom onClick behaviors</Highlight>: when click, console log the name of the icon clicked. We can also pass a custom <Highlight>indentPixels</Highlight> prop to folder tree to fix the indentation to your favorite size.
   </span>
 );
 
@@ -122,6 +122,7 @@ const OKIcon = ({ onClick, className }) => {
 const CustomIconsDemo = () => {
   const onTreeStateChange = data => { /* do whatever needed */ };
 
+  const customIdentPixels = 50;
   const iconComponents = {
     FileIcon,
     FolderIcon,
@@ -140,6 +141,7 @@ const CustomIconsDemo = () => {
         data={ testData }
         onChange={ onTreeStateChange }
         iconComponents={ iconComponents }
+        indentPixels={ customIdentPixels }
       />
     </div>
   );
@@ -230,6 +232,7 @@ const OKIcon = ({ onClick, className }) => {
 const CustomIconsDemo = () => {
   const onTreeStateChange = data => { /* do whatever needed */ };
 
+  const customIdentPixels = 50;
   const iconComponents = {
     FileIcon,
     FolderIcon,
@@ -257,6 +260,7 @@ const CustomIconsDemo = () => {
           data={ testData }
           onChange={ onTreeStateChange }
           iconComponents={ iconComponents }
+          indentPixels={ customIdentPixels }
         />
       </div>
     </>

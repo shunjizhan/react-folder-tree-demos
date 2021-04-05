@@ -25,7 +25,11 @@ const demoDescription = (
     <Highlight> add new folder</Highlight>
     {' '}
     (folders only).
-    By passing a onChange function, we can console log the latest tree state after each operation.
+    By passing an
+    {' '}
+    <Highlight>onChange</Highlight>
+    {' '}
+    function, we can console log the latest tree state after each operation.
   </span>
 );
 
