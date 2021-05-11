@@ -20,7 +20,7 @@ const prodOptions = {
   optimization: {
     minimize: true,
     minimizer: [
-      new TerserWebpackPlugin(),              // 压缩js
+      new TerserWebpackPlugin(),              // 压缩js # TODO: webpack 5好像是自动压缩的，不需要手动加
       new OptimizeCssAssetsWebpackPlugin(),   // 压缩css #TODO: 好像其实没有压缩？？main.css还是很大
     ],
   },
@@ -34,7 +34,7 @@ module.exports = {
   entry: path.resolve(__dirname, './src/index.js'),
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: `react-folder-tree-demos.bundle${isProd ? '.min' : ''}.js`,
+    filename: 'react-folder-tree-demos.[contenthash:8].bundle.js',
   },
   resolve: {
     // our code can resolve 'xxx' instead of writing 'xxx.jsx'
@@ -85,15 +85,16 @@ module.exports = {
     ],
   },
   plugins: [
-    // generates an HTML file by injecting automatically all our generated bundles.
-    new HtmlWebPackPlugin({
+    new HtmlWebPackPlugin({       // generates an HTML file by injecting automatically all our generated bundles.
       template: path.resolve(__dirname, './public/index.html'),
       favicon: path.resolve(__dirname, './public/pokeball.ico'),
       filename: 'index.html',
     }),
     new CleanTerminalPlugin(),     // clear terminal in each build
-    new MiniCssExtractPlugin(),    // extract css to a separate file, reduce main chunk size
-    new BundleAnalyzerPlugin(),
+    new MiniCssExtractPlugin({     // extract css to a separate file, reduce main chunk size
+      filename: '[name].[contenthash:8].bundle.css',
+    }),
+    // new BundleAnalyzerPlugin(),
   ],
   ...options,
 };

@@ -20,7 +20,7 @@ import {
 
 const demoDescription = (
   <span>
-    This example demos how to use <Highlight>custom icons</Highlight> (all icons can be customized)! In the example it uses icons from Fontawesome, and implements <Highlight>custom onClick behaviors</Highlight>: when click, console log the name of the icon clicked. We can also pass a custom <Highlight>indentPixels</Highlight> prop to folder tree to fix the indentation to your favorite size.
+    This example demos how to use <Highlight>custom icons</Highlight> (all icons can be customized)! This example uses icons from Fontawesome, and implements <Highlight>custom onClick behaviors</Highlight>: when click an Icon, console log it's <Highlight>name</Highlight>, <Highlight>path</Highlight>, <Highlight>className (icon type)</Highlight>. We can build more complex onClick functions using these props. Also, We can pass a custom <Highlight>indentPixels</Highlight> prop to folder tree to fix the indentation to your favorite size.
   </span>
 );
 
@@ -38,86 +38,87 @@ import {
 
 import FolderTree, { testData } from 'react-folder-tree';
 
-const CaretRightIcon = ({ onClick, className }) => {
+const CaretRightIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: CaretRightIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaCaretRight onClick={ handleClick } />;
 };
 
-const CaretDownIcon = ({ onClick, className }) => {
+const CaretDownIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: CaretDownIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaCaretDown onClick={ handleClick } />;
 };
 
-const FileIcon = ({ onClick, className }) => {
+const FileIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: FileIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaEthereum onClick={ handleClick } />;
 };
 
-const FolderIcon = ({ onClick, className }) => {
+const FolderIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: FolderIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaBitcoin onClick={ handleClick } />;
 };
 
-const FolderOpenIcon = ({ onClick, className }) => {
+const FolderOpenIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: FolderOpenIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaBitcoin onClick={ handleClick } />;
 };
 
-const EditIcon = ({ onClick, className }) => {
+const EditIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: EditIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaRegEdit onClick={ handleClick } />;
 };
 
-const DeleteIcon = ({ onClick, className }) => {
+const DeleteIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: EditIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaRegTrashAlt onClick={ handleClick } />;
 };
 
-const CancelIcon = ({ onClick, className }) => {
+const CancelIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: CancelIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaRegWindowClose onClick={ handleClick } />;
 };
 
-const OKIcon = ({ onClick, className }) => {
+const OKIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: OKIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaRegCheckSquare onClick={ handleClick } />;
 };
+
 
 const CustomIconsDemo = () => {
   const onTreeStateChange = data => { /* do whatever needed */ };
@@ -148,82 +149,82 @@ const CustomIconsDemo = () => {
 };
 `;
 
-const CaretRightIcon = ({ onClick, className }) => {
+const CaretRightIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: CaretRightIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaCaretRight onClick={ handleClick } />;
 };
 
-const CaretDownIcon = ({ onClick, className }) => {
+const CaretDownIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: CaretDownIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaCaretDown onClick={ handleClick } />;
 };
 
-const FileIcon = ({ onClick, className }) => {
+const FileIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: FileIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaEthereum onClick={ handleClick } />;
 };
 
-const FolderIcon = ({ onClick, className }) => {
+const FolderIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: FolderIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaBitcoin onClick={ handleClick } />;
 };
 
-const FolderOpenIcon = ({ onClick, className }) => {
+const FolderOpenIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: FolderOpenIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaBitcoin onClick={ handleClick } />;
 };
 
-const EditIcon = ({ onClick, className }) => {
+const EditIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: EditIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaRegEdit onClick={ handleClick } />;
 };
 
-const DeleteIcon = ({ onClick, className }) => {
+const DeleteIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: EditIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaRegTrashAlt onClick={ handleClick } />;
 };
 
-const CancelIcon = ({ onClick, className }) => {
+const CancelIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: CancelIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaRegWindowClose onClick={ handleClick } />;
 };
 
-const OKIcon = ({ onClick, className }) => {
+const OKIcon = ({ onClick: defaultOnClick, className, path, name }) => {
   const handleClick = () => {
-    console.log('clicked: OKIcon');
-    onClick();
+    console.log('clicked:', { className, path, name });
+    defaultOnClick();
   };
 
   return <FaRegCheckSquare onClick={ handleClick } />;
