@@ -6,6 +6,7 @@ import BasicTree from './DemoComponents/BasicTree';
 import InitialState from './DemoComponents/InitialState';
 import TreeStateViewer from './DemoComponents/TreeStateViewer';
 import CustomIconsDemo from './DemoComponents/CustomIconsDemo';
+import CustomNode from './DemoComponents/CustomNode';
 import logo from '../assets/logo.png';
 
 import './FolderTreeDemos.scss';
@@ -13,6 +14,7 @@ import './FolderTreeDemos.scss';
 // TODO: add github link on the right corner to link the github folder
 // TODO: add footer made with love by shunjizhan, and link to my github
 // TODO: webpack tree shaking to reduce trunk size (and other optimizations)
+// TODO: use route so in README can add link to it
 WebFont.load({
   google: {
     families: [
@@ -26,6 +28,7 @@ const allComponents = {
   'Initial State': InitialState,
   'View Live State': TreeStateViewer,
   'Use Custom Icons': CustomIconsDemo,
+  'Custom TreeNode onClick': CustomNode,
 };
 
 const FolderTreeDemos = () => {

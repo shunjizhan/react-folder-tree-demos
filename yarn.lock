@@ -7852,18 +7852,18 @@ react-dom@^16.13.1:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
-react-folder-tree@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/react-folder-tree/-/react-folder-tree-4.1.0.tgz#654444b8cc8c532f5483220d646f64585bd603a3"
-  integrity sha512-grGtdYai78v6RGhzFKGt2vzE9BqCKG4OwDU384U85TBMxNYMVESS80PZ3VCAHQY+nsYutBGlucoXVHsOK5xrAg==
+react-folder-tree@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-folder-tree/-/react-folder-tree-4.2.0.tgz#61db7f081d9db4195d7e45e3119cfeb0ca67b12e"
+  integrity sha512-HtEehWi73nZPEB558HhoeSlkqap2SKOEmpM8c97K24sxSezMTrP4JohC8hPSHktR6BWw9q/IrztvW+Xjcg4a2Q==
   dependencies:
     prop-types "^15.7.2"
     react-icons "^4.1.0"
 
-react-icons@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.1.0.tgz#9ca9bcbf2e3aee8e86e378bb9d465842947bbfc3"
-  integrity sha512-FCXBg1JbbR0vWALXIxmFAfozHdVIJmmwCD81Jk0EKOt7Ax4AdBNcaRkWhR0NaKy9ugJgoY3fFvo0PHpte55pXg==
+react-icons@^4.1.0, react-icons@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.2.0.tgz#6dda80c8a8f338ff96a1851424d63083282630d0"
+  integrity sha512-rmzEDFt+AVXRzD7zDE21gcxyBizD/3NqjbX6cmViAgdqfJ2UiLer8927/QhhrXQV7dEj/1EGuOTPp7JnLYVJKQ==
 
 react-is@^16.13.1, react-is@^16.3.2, react-is@^16.8.1, react-is@^16.8.6:
   version "16.13.1"
